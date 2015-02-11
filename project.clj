@@ -4,5 +4,7 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.6.0"]
-                 [amazonica "0.3.13"]]
+                 [amazonica "0.3.13"]
+                 [cheshire "5.4.0"]
+                 [circleci/clj-yaml "0.5.3"]]
   :profiles {:dev {:plugins [[lein-dotenv "1.0.0"]]}})

@@ -24,6 +24,14 @@ In Clojure we have the following requirement: the application needs to switch th
 $ java -jar spurious-aws-sdk-helper-0.1.0-standalone.jar [args]
 ```
 
+## Testing locally
+
+```bash
+lein pom
+lein jar
+lein install
+```
+
 ## License
 
 Copyright © 2015 Integralist
