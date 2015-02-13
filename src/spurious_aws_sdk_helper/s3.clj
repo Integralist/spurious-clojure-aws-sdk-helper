@@ -1,17 +1,12 @@
 (ns spurious-aws-sdk-helper.s3
   (:use [amazonica.aws.s3])
   (:require [amazonica.core :refer [ex->map]]
-            [clojure.java.shell :refer [sh]]
-            [clojure.data.json :as json]
-            [spurious-aws-sdk-helper.utils :refer [credentials]]))
+            [spurious-aws-sdk-helper.utils :refer [endpoint credentials]]))
 
-(def endpoint (first
-                (:spurious-s3
-                  (json/read-str
-                    (:out (sh "spurious" "ports" "--json")) :key-fn keyword))))
+(def s3 (endpoint :spurious-s3))
 
-(def cred (assoc credentials :endpoint
-                 (str (:Host endpoint) ":" (:HostPort endpoint))))
+(def cred
+  (assoc credentials :endpoint (str (:Host s3) ":" (:HostPort s3))))
 
 (defn setup [name]
   (try

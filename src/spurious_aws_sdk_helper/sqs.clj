@@ -1,12 +1,12 @@
 (ns spurious-aws-sdk-helper.sqs
   (:use [amazonica.aws.sqs])
   (:require [amazonica.core :refer [ex->map]]
-            [clojure.java.shell :refer [sh]]
-            [spurious-aws-sdk-helper.utils :refer [credentials]]))
+            [spurious-aws-sdk-helper.utils :refer [endpoint credentials]]))
 
-; (sh "spurious ports --json")
+(def sqs (endpoint :spurious-sqs))
 
-(def cred (assoc credentials :endpoint "sqs.spurious.localhost:49153"))
+(def cred
+  (assoc credentials :endpoint (str (:Host sqs) ":" (:HostPort sqs))))
 
 (defn setup [name]
   (try

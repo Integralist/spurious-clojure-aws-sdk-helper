@@ -1,12 +1,12 @@
 (ns spurious-aws-sdk-helper.dynamodb
   (:use [amazonica.aws.dynamodbv2])
   (:require [amazonica.core :refer [ex->map]]
-            [clojure.java.shell :refer [sh]]
-            [spurious-aws-sdk-helper.utils :refer [credentials]]))
+            [spurious-aws-sdk-helper.utils :refer [endpoint credentials]]))
 
-; (sh "spurious ports --json")
+(def ddb (endpoint :spurious-dynamo))
 
-(def cred (assoc credentials :endpoint "dynamodb.spurious.localhost:49155"))
+(def cred
+  (assoc credentials :endpoint (str (:Host ddb) ":" (:HostPort ddb))))
 
 (defn setup [schema]
   (try
