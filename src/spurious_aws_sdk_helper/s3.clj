@@ -10,9 +10,8 @@
                   (json/read-str
                     (:out (sh "spurious" "ports" "--json")) :key-fn keyword))))
 
-(def cred (assoc
-            credentials
-            :endpoint (str (:Host endpoint) ":" (:HostPort endpoint))))
+(def cred (assoc credentials :endpoint
+                 (str (:Host endpoint) ":" (:HostPort endpoint))))
 
 (defn setup [name]
   (try
