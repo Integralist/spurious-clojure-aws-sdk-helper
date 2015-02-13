@@ -2,9 +2,6 @@
   (:require [clojure.data.json :as json]
             [clojure.java.shell :refer [sh]]))
 
-(defn env [name]
-  (System/getenv name))
-
 (defn public-methods [namespace]
   (keys (ns-publics namespace)))
 
