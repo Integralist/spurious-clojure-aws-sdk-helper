@@ -51,6 +51,16 @@ If your application is running within a Docker container then the `configure` fu
                          :ddb (slurp "./resources/config/schema.yaml")})))
 ```
 
+If you already have a part of your application that creates AWS resources, then you'll not need the Spurious helper to create those resources; but you will want to make sure that you call the Spurious helper's `core/configure` function *before* that part of your application is executed. This will allow the helper to still configure settings that allow the AWS SDK to work with the Spurious services.
+
+The `core/configure` function has multi-arity and so you can call it without the map data structure, like so:
+
+```clj
+(core/configure :app)
+```
+
+> Note: the Java SDK, which Spurious utilises under the covers, requires that each SDK API function is passed the same auth credentials (access/secret keys and endpoint). This means your application will need to ensure it uses the right credentials (the example app linked to above shows that you can use `[spurious-aws-sdk-helper.utils :refer [endpoint cred]]` for dev mode)
+
 ## Testing locally
 
 Clone this repository, make changes and then run:
