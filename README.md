@@ -2,6 +2,8 @@
 
 Inspired by the original [Spurious Ruby AWS SDK Helper](https://github.com/spurious-io/ruby-awssdk-helper)
 
+You can find this library on [Clojars](http://clojars.org/spurious-aws-sdk-helper)
+
 ## Usage
 
 You can use this helper library from within either a standard Clojure application or via an application running within a [Docker](https://www.docker.com/) container.
