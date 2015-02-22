@@ -1,4 +1,4 @@
-(defproject spurious-aws-sdk-helper "0.1.0"
+(defproject spurious-aws-sdk-helper "0.2.0"
   :description "A Clojure helper class for configuring a Clojure application that uses the AWS SDK (via Amazonica) to talk to the Spurious services (https://github.com/spurious-io/spurious)"
   :url "https://github.com/Integralist/spurious-clojure-aws-sdk-helper"
   :license {:name "Eclipse Public License"

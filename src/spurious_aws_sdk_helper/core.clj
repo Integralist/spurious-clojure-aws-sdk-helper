@@ -4,7 +4,11 @@
             [spurious-aws-sdk-helper.dynamodb :as ddb]
             [clj-yaml.core :as yaml]))
 
-(defn configure [type opts]
-  (if-let [name   (:s3  opts)] (s3/setup  type name))
-  (if-let [name   (:sqs opts)] (sqs/setup type name))
-  (if-let [schema (:ddb opts)] (ddb/setup type (yaml/parse-string schema))))
+(defn configure
+  ([type]
+   (s3/setup  type)
+   (ddb/setup type))
+  ([type opts]
+   (if-let [name   (:s3  opts)] (s3/setup  type name))
+   (if-let [name   (:sqs opts)] (sqs/setup type name))
+   (if-let [schema (:ddb opts)] (ddb/setup type (yaml/parse-string schema)))))
