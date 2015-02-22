@@ -1,12 +1,10 @@
 # Spurious Clojure AWS SDK Helper
 
-Inspired by the original [Spurious Ruby AWS SDK Helper](https://github.com/spurious-io/ruby-awssdk-helper)
-
-You can find this library on [Clojars](http://clojars.org/spurious-aws-sdk-helper)
+Inspired by the original [Spurious Ruby AWS SDK Helper](https://github.com/spurious-io/ruby-awssdk-helper): which configures the AWS SDK to use [Spurious](https://github.com/spurious-io/spurious) (Spurious is a toolset allowing development against a subset of AWS resources, locally).
 
 ## Usage
 
-You can use this helper library from within either a standard Clojure application or via an application running within a [Docker](https://www.docker.com/) container.
+You can use this helper library from within either a standard Clojure application or via an application running within a [Docker](https://www.docker.com/) container ([here is an example application](https://github.com/integralist/spurious-clojure-example)).
 
 The process is effectively the same; the only difference is that you'll need to pass a `:docker` keyword to the `configure` function instead of a `:app` keyword (see below for examples).
 
@@ -18,13 +16,15 @@ Add the following dependency to your `profile.clj`:
 {:dependencies [[spurious-aws-sdk-helper "0.1.0"]]}
 ```
 
-Internally we use the [Amazonica](https://github.com/mcohen01/amazonica/) AWS library. 
+The link to the library on Clojars is [http://clojars.org/spurious-aws-sdk-helper](http://clojars.org/spurious-aws-sdk-helper).
 
-You'll see we also use it in the following example repository: 
+Internally the library uses the [Amazonica](https://github.com/mcohen01/amazonica/) library, as there is currently no official Clojure AWS SDK.
+
+You'll see we also use Amazonica in the following example application repository: 
 https://github.com/Integralist/spurious-clojure-example/ 
 
 > Note: your project doesn't *have* to use Amazonica; 
-> it just made creating our example project easier.
+> it just made creating the example application quicker/easier.
 
 ### Step 2
 
