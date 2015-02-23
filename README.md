@@ -13,7 +13,7 @@ The process is effectively the same; the only difference is that you'll need to 
 Add the following dependency to your `profile.clj`:
 
 ```clj
-{:dependencies [[spurious-aws-sdk-helper "0.1.0"]]}
+{:dependencies [[spurious-aws-sdk-helper "0.2.0"]]}
 ```
 
 The link to the library on Clojars is [http://clojars.org/spurious-aws-sdk-helper](http://clojars.org/spurious-aws-sdk-helper).
