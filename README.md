@@ -1,4 +1,4 @@
-# Spurious Clojure AWS SDK Helper
+# Spurious Clojure AWS SDK Helper
 
 Inspired by the original [Spurious Ruby AWS SDK Helper](https://github.com/spurious-io/ruby-awssdk-helper): which configures the AWS SDK to use [Spurious](https://github.com/spurious-io/spurious) (Spurious is a toolset allowing development against a subset of AWS resources, locally).
 
